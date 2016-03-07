@@ -23,6 +23,6 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <div id="contact-link">
-	<a href="{$urls.pages.contact}" title="{l s='Contact us' mod='blockcontact'}">{l s='Contact us' mod='blockcontact'}</a>
-    {if $contact_infos.phone}{l s='Call us now: %s' sprintf=$contact_infos.phone mod='blockcontact'}{/if}
+	<a href="{$urls.pages.contact}" title="{l s='Contact us' mod='ps_contactinfo'}">{l s='Contact us' mod='ps_contactinfo'}</a>
+    {if $contact_infos.phone}{l s='Call us now: %s' sprintf=$contact_infos.phone mod='ps_contactinfo'}{/if}
 </div>

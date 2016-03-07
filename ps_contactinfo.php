@@ -30,20 +30,19 @@ if (!defined('_PS_VERSION_')) {
 
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 
-class Blockcontact extends Module implements WidgetInterface
+class Ps_Contactinfo extends Module implements WidgetInterface
 {
     public function __construct()
     {
-        $this->name = 'blockcontact';
+        $this->name = 'ps_contactinfo';
         $this->author = 'PrestaShop';
-        $this->tab = 'front_office_features';
-        $this->version = '2.0';
+        $this->version = '1.0.0';
 
         $this->bootstrap = true;
         parent::__construct();
 
-        $this->displayName = $this->l('Contact block');
-        $this->description = $this->l('Allows you to add additional information about your store\'s customer service.');
+        $this->displayName = $this->l('Contact information');
+        $this->description = $this->l('Allows you to display additional information about your store\'s customer service.');
         $this->ps_versions_compliancy = array('min' => '1.7', 'max' => _PS_VERSION_);
     }
 
@@ -63,9 +62,9 @@ class Blockcontact extends Module implements WidgetInterface
         if (preg_match('/^displayNav\d*$/', $hookName)) {
             $template_file = 'nav.tpl';
         } elseif ($hookName == 'displayLeftColumn') {
-            $template_file = 'blockcontact-rich.tpl';
+            $template_file = 'ps_contactinfo-rich.tpl';
         } else {
-            $template_file = 'blockcontact.tpl';
+            $template_file = 'ps_contactinfo.tpl';
         }
 
         if (!$this->isCached($template_file, $this->getCacheId())) {

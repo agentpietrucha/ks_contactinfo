@@ -24,9 +24,9 @@
 *}
 
 <div class="block-contact">
-  <h4>{l s='Store information' mod='blockcontact'}</h4>
-  {$contact_infos.address.formatted nofilter}
-  {if $contact_infos.phone}<br>{l s='Tel: %s' sprintf=$contact_infos.phone}{/if}
-  {if $contact_infos.fax}<br>{l s='Fax: %s' sprintf=$contact_infos.fax}{/if}
-  {if $contact_infos.email}<br>{l s='Email: %s' sprintf=$contact_infos.email}{/if}
+	<h4>{l s='Contact us' mod='ps_contactinfo'}</h4>
+    {$contact_infos.address.formatted nofilter}
+    {if $contact_infos.phone}<br>{l s='Tel: %s' sprintf=$contact_infos.phone}{/if}
+    {if $contact_infos.fax}<br>{l s='Fax: %s' sprintf=$contact_infos.fax}{/if}
+    {if $contact_infos.email}<br>{l s='Email: %s' sprintf=$contact_infos.email}{/if}
 </div>

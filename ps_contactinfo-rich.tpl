@@ -1,5 +1,4 @@
-<?php
-/*
+{*
 * 2007-2015 PrestaShop
 *
 * NOTICE OF LICENSE
@@ -22,14 +21,12 @@
 *  @copyright  2007-2015 PrestaShop SA
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*/
-				    	
-header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
-						
-header("Cache-Control: no-store, no-cache, must-revalidate");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-						
-header("Location: ../");
-exit;
+*}
+
+<div class="block-contact">
+  <h4>{l s='Store information' mod='ps_contactinfo'}</h4>
+  {$contact_infos.address.formatted nofilter}
+  {if $contact_infos.phone}<br>{l s='Tel: %s' sprintf=$contact_infos.phone}{/if}
+  {if $contact_infos.fax}<br>{l s='Fax: %s' sprintf=$contact_infos.fax}{/if}
+  {if $contact_infos.email}<br>{l s='Email: %s' sprintf=$contact_infos.email}{/if}
+</div>

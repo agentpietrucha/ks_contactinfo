@@ -1,7 +1,7 @@
 {
-  "name": "prestashop/blockcontact",
-  "description": "PrestaShop module blockcontact",
-  "homepage": "https://github.com/PrestaShop/blockcontact",
+  "name": "prestashop/ps_contactinfo",
+  "description": "PrestaShop module ps_contactinfo",
+  "homepage": "https://github.com/PrestaShop/ps_contactinfo",
   "license": "AFL - Academic Free License (AFL 3.0)",
   "authors": [
     {
@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-    "php": ">=5.3.2"
+    "php": ">=5.4"
   },
   "config": {
     "preferred-install": "dist"
