@@ -41,8 +41,8 @@ class Ps_Contactinfo extends Module implements WidgetInterface
         $this->bootstrap = true;
         parent::__construct();
 
-        $this->displayName = $this->l('Contact information');
-        $this->description = $this->l('Allows you to display additional information about your store\'s customer service.');
+        $this->displayName = $this->getTranslator()->trans('Contact information', array(), 'Modules.ContactInfo');
+        $this->description = $this->getTranslator()->trans('Allows you to display additional information about your store\'s customer service.', array(), 'Modules.ContactInfo');
         $this->ps_versions_compliancy = array('min' => '1.7', 'max' => _PS_VERSION_);
     }
 
