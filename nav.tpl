@@ -23,6 +23,6 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <div id="contact-link">
-	<a href="{$urls.pages.contact}">{l s='Contact us' d='Modules.ContactInfos.Shop'}</a>
-    {if $contact_infos.phone}{l s='Call us now: %s' sprintf=$contact_infos.phone d='Modules.ContactInfos.Shop'}{/if}
+	<a href="{$urls.pages.contact}">{l s='Contact us' d='Modules.ContactInfo.Shop'}</a>
+    {if $contact_infos.phone}{l s='Call us now: %s' sprintf=$contact_infos.phone d='Modules.ContactInfo.Shop'}{/if}
 </div>
