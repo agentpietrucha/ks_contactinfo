@@ -26,7 +26,37 @@
 <div class="block-contact">
 	<h4>{l s='Contact us' d='Modules.ContactInfo.Shop'}</h4>
     {$contact_infos.address.formatted nofilter}
-    {if $contact_infos.phone}<br>{l s='Tel: %s' sprintf=$contact_infos.phone d='Modules.ContactInfo.Shop'}{/if}
-    {if $contact_infos.fax}<br>{l s='Fax: %s' sprintf=$contact_infos.fax d='Modules.ContactInfo.Shop'}{/if}
-    {if $contact_infos.email}<br>{l s='Email: %s' sprintf=$contact_infos.email d='Modules.ContactInfo.Shop'}{/if}
+    {if $contact_infos.phone}
+      <br>
+      {* First tag [1][/1] is for a HTML tag. *}
+      {l
+        s='Tel: %phone%'
+        sprintf=[
+          '%phone%' => $contact_infos.phone
+        ]
+        d='Modules.ContactInfo.Shop'
+      }
+    {/if}
+    {if $contact_infos.fax}
+      <br>
+      {* First tag [1][/1] is for a HTML tag. *}
+      {l
+        s='Fax: %fax%'
+        sprintf=[
+          '%fax%' => $contact_infos.fax
+        ]
+        d='Modules.ContactInfo.Shop'
+      }
+    {/if}
+    {if $contact_infos.email}
+      <br>
+      {* First tag [1][/1] is for a HTML tag. *}
+      {l
+        s='Email: %email%'
+        sprintf=[
+          '%email%' => $contact_infos.email
+        ]
+        d='Modules.ContactInfo.Shop'
+      }
+    {/if}
 </div>

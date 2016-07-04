@@ -24,5 +24,16 @@
 *}
 <div id="contact-link">
 	<a href="{$urls.pages.contact}">{l s='Contact us' d='Modules.ContactInfo.Shop'}</a>
-    {if $contact_infos.phone}{l s='Call us now: %s' sprintf=$contact_infos.phone d='Modules.ContactInfo.Shop'}{/if}
+    {if $contact_infos.phone}
+      {* First tag [1][/1] is for a HTML tag. *}
+      {l
+        s='Call us: [1]%phone%[/1]'
+        sprintf=[
+          '[1]' => '<span>',
+          '[/1]' => '</span>',
+          '%phone%' => $contact_infos.phone
+        ]
+        d='Modules.ContactInfo.Shop'
+      }
+    {/if}
 </div>
