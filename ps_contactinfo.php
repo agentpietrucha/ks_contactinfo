@@ -49,8 +49,9 @@ class Ps_Contactinfo extends Module implements WidgetInterface
     public function install()
     {
         return parent::install()
-            && $this->registerHook('displayNav')
-            && $this->registerHook('footer');
+            && $this->registerHook('displayNav1')
+            && $this->registerHook('displayFooter')
+        ;
     }
 
     public function renderWidget($hookName = null, array $configuration = [])
