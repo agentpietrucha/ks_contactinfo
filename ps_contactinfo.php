@@ -32,6 +32,12 @@ use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 
 class Ps_Contactinfo extends Module implements WidgetInterface
 {
+    const TEMPLATES = array (
+        'light' => 'nav.tpl',
+        'rich' => 'ps_contactinfo-rich.tpl',
+        'default' => 'ps_contactinfo.tpl',
+    );
+
     public function __construct()
     {
         $this->name = 'ps_contactinfo';
@@ -51,6 +57,7 @@ class Ps_Contactinfo extends Module implements WidgetInterface
         return parent::install()
             && $this->registerHook('displayNav1')
             && $this->registerHook('displayFooter')
+            && $this->registerHook('actionUpdateStoresAfter')
         ;
     }
 
@@ -61,11 +68,11 @@ class Ps_Contactinfo extends Module implements WidgetInterface
         }
 
         if (preg_match('/^displayNav\d*$/', $hookName)) {
-            $template_file = 'nav.tpl';
+            $template_file = self::TEMPLATES['light'];
         } elseif ($hookName == 'displayLeftColumn') {
-            $template_file = 'ps_contactinfo-rich.tpl';
+            $template_file = self::TEMPLATES['rich'];
         } else {
-            $template_file = 'ps_contactinfo.tpl';
+            $template_file = self::TEMPLATES['default'];
         }
 
         if (!$this->isCached($template_file, $this->getCacheId())) {
@@ -98,5 +105,14 @@ class Ps_Contactinfo extends Module implements WidgetInterface
         return [
             'contact_infos' => $contact_infos,
         ];
+    }
+
+    public function hookActionUpdateStoresAfter()
+    {
+        foreach (self::TEMPLATES as $template) {
+            $this->_clearCache($template);
+        }
+
+        return true;
     }
 }
