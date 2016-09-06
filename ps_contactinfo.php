@@ -57,7 +57,7 @@ class Ps_Contactinfo extends Module implements WidgetInterface
         return parent::install()
             && $this->registerHook('displayNav1')
             && $this->registerHook('displayFooter')
-            && $this->registerHook('actionUpdateStoresAfter')
+            && $this->registerHook('actionAdminStoresControllerUpdate_optionsAfter')
         ;
     }
 
@@ -107,7 +107,7 @@ class Ps_Contactinfo extends Module implements WidgetInterface
         ];
     }
 
-    public function hookActionUpdateStoresAfter()
+    public function hookActionAdminStoresControllerUpdate_optionsAfter()
     {
         foreach ($this->templates as $template) {
             $this->_clearCache($template);
