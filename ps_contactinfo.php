@@ -49,7 +49,7 @@ class Ps_Contactinfo extends Module implements WidgetInterface
 
         $this->displayName = $this->getTranslator()->trans('Contact information', array(), 'Modules.ContactInfo.Admin');
         $this->description = $this->getTranslator()->trans('Allows you to display additional information about your store\'s customer service.', array(), 'Modules.ContactInfo.Admin');
-        $this->ps_versions_compliancy = array('min' => '1.7', 'max' => _PS_VERSION_);
+        $this->ps_versions_compliancy = array('min' => '1.7.0.0', 'max' => _PS_VERSION_);
     }
 
     public function install()
