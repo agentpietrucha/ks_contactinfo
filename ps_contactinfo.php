@@ -75,11 +75,9 @@ class Ps_Contactinfo extends Module implements WidgetInterface
             $template_file = $this->templates['default'];
         }
 
-        if (!$this->isCached($template_file, $this->getCacheId())) {
-            $this->smarty->assign($this->getWidgetVariables($hookName, $configuration));
-        }
+        $this->smarty->assign($this->getWidgetVariables($hookName, $configuration));
 
-        return $this->display(__FILE__, $template_file, $this->getCacheId());
+        return $this->fetch('module:'.$this->name.'/'.$template_file);
     }
 
     public function getWidgetVariables($hookName = null, array $configuration = [])
