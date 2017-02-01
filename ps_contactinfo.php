@@ -42,7 +42,7 @@ class Ps_Contactinfo extends Module implements WidgetInterface
     {
         $this->name = 'ps_contactinfo';
         $this->author = 'PrestaShop';
-        $this->version = '2.0.0';
+        $this->version = '2.0.1';
 
         $this->bootstrap = true;
         parent::__construct();
