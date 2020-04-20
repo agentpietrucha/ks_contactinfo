@@ -87,7 +87,7 @@ class Ps_Contactinfo extends Module implements WidgetInterface
     {
         $address = $this->context->shop->getAddress();
 
-		$is_state_multilang = isset(State::$definition['multilang']) && State::$definition['multilang']==true;
+        $is_state_multilang = !empty(State::$definition['multilang']);
 		$state_name = (new State($address->id_state))->name;
 
         $contact_infos = [
