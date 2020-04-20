@@ -88,7 +88,7 @@ class Ps_Contactinfo extends Module implements WidgetInterface
         $address = $this->context->shop->getAddress();
 
         $is_state_multilang = !empty(State::$definition['multilang']);
-		$state_name = (new State($address->id_state))->name;
+        $state_name = (new State($address->id_state))->name;
 
         $contact_infos = [
             'company' => Configuration::get('PS_SHOP_NAME'),
