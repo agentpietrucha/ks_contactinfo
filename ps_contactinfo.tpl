@@ -23,34 +23,44 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<div class="block-contact">
-	<h4>{l s='Contact us' d='Shop.Theme.Global'}</h4>
-    {$contact_infos.address.formatted nofilter}
-    {if $contact_infos.phone}
-      <br>
-      {* First tag [1][/1] is for a HTML tag. *}
-      {l
-        s='Tel: %phone%'
-        sprintf=[
-          '%phone%' => $contact_infos.phone
-        ]
-        d='Modules.Contactinfo.Shop'
-      }
-    {/if}
-    {if $contact_infos.fax}
-      <br>
-      {* First tag [1][/1] is for a HTML tag. *}
-      {l
-        s='Fax: %fax%'
-        sprintf=[
-          '%fax%' => $contact_infos.fax
-        ]
-        d='Modules.Contactinfo.Shop'
-      }
-    {/if}
-    {if $contact_infos.email && $display_email}
-      <br>
-    {l s='Email us: ' d='Shop.Theme.Global'}
-    {mailto address={$contact_infos.email} encode="javascript"}
-    {/if}
+<div class="block-contact col-md-3 links wrapper">
+    <div class="hidden-sm-down">
+        <p class="h4 text-uppercase block-contact-title">{l s='Store information' d='Shop.Theme.Global'}</p>
+        {$contact_infos.address.formatted nofilter}
+        {if $contact_infos.phone}
+            <br>
+            {* [1][/1] is for a HTML tag. *}
+            {l s='Call us: [1]%phone%[/1]'
+            sprintf=[
+            '[1]' => '<span>',
+            '[/1]' => '</span>',
+            '%phone%' => $contact_infos.phone
+            ]
+            d='Modules.Contactinfo.Shop'
+            }
+        {/if}
+        {if $contact_infos.fax}
+            <br>
+            {* [1][/1] is for a HTML tag. *}
+            {l
+            s='Fax: [1]%fax%[/1]'
+            sprintf=[
+            '[1]' => '<span>',
+            '[/1]' => '</span>',
+            '%fax%' => $contact_infos.fax
+            ]
+            d='Modules.Contactinfo.Shop'
+            }
+        {/if}
+        {if $contact_infos.email && $display_email}
+            <br>
+            {l s='Email us:' d='Modules.Contactinfo.Shop'}
+            {mailto address=$contact_infos.email encode="javascript"}
+        {/if}
+    </div>
+    <div class="hidden-md-up">
+        <div class="title">
+            <a class="h3" href="{$urls.pages.stores}">{l s='Store information' d='Shop.Theme.Global'}</a>
+        </div>
+    </div>
 </div>
