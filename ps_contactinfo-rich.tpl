@@ -23,45 +23,43 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 
-<div class="block-contact">
-  <h4>{l s='Store information' d='Modules.Contactinfo.Shop'}</h4>
-  {$contact_infos.address.formatted nofilter}
+<div class="contact-rich">
+  <h4>{l s='Store information' d='Shop.Theme.Global'}</h4>
+  <div class="block">
+    <div class="icon"><i class="material-icons">&#xE55F;</i></div>
+    <div class="data">{$contact_infos.address.formatted nofilter}</div>
+  </div>
   {if $contact_infos.phone}
-    <br>
-    {* First tag [1][/1] is for a HTML tag. *}
-    {l s='Call us: [1]%phone%[/1]'
-      sprintf=[
-        '[1]' => '<span>',
-        '[/1]' => '</span>',
-        '%phone%' => $contact_infos.phone
-      ]
-      d='Modules.Contactinfo.Shop'
-    }
+    <hr/>
+    <div class="block">
+      <div class="icon"><i class="material-icons">&#xE0CD;</i></div>
+      <div class="data">
+        {l s='Call us:' d='Modules.Contactinfo.Shop'}<br/>
+        <a href="tel:{$contact_infos.phone}">{$contact_infos.phone}</a>
+      </div>
+    </div>
   {/if}
   {if $contact_infos.fax}
-    <br>
-    {* First tag [1][/1] is for a HTML tag. *}
-    {l
-      s='Fax: [1]%fax%[/1]'
-      sprintf=[
-        '[1]' => '<span>',
-        '[/1]' => '</span>',
-        '%fax%' => $contact_infos.fax
-      ]
-      d='Modules.Contactinfo.Shop'
-    }
+    <hr/>
+    <div class="block">
+      <div class="icon"><i class="material-icons">&#xE0DF;</i></div>
+      <div class="data">
+        {l s='Fax:' d='Modules.Contactinfo.Shop'}<br/>
+        {$contact_infos.fax}
+      </div>
+    </div>
   {/if}
   {if $contact_infos.email && $display_email}
     <br>
-    {* First tag [1][/1] is for a HTML tag. *}
-    {l
-      s='Email us: [1]%email%[/1]'
-      sprintf=[
-        '[1]' => '<span>',
-        '[/1]' => '</span>',
-        '%email%' => $contact_infos.email
-      ]
-      d='Modules.Contactinfo.Shop'
-    }
+    {l s='Email us: ' d='Shop.Theme.Global'}
+    {mailto address={$contact_infos.email} encode="javascript"}
+    <hr/>
+    <div class="block">
+      <div class="icon"><i class="material-icons">&#xE158;</i></div>
+      <div class="data email">
+        {l s='Email us:' d='Modules.Contactinfo.Shop'}<br/>
+      </div>
+      {mailto address=$contact_infos.email encode="javascript"}
+    </div>
   {/if}
 </div>
