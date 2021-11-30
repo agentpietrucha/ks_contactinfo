@@ -62,4 +62,17 @@
       {mailto address=$contact_infos.email encode="javascript"}
     </div>
   {/if}
+  {if $contact_infos.details}
+    <br>
+    {* First tag [1][/1] is for a HTML tag. *}
+    {l
+      s='Details: [1]%details%[/1]'
+      sprintf=[
+        '[1]' => '<span>',
+        '[/1]' => '</span>',
+        '%fax%' => $contact_infos.details
+      ]
+      d='Modules.Contactinfo.Shop'
+    }
+  {/if}
 </div>
