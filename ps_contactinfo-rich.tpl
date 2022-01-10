@@ -50,16 +50,23 @@
     </div>
   {/if}
   {if $contact_infos.email && $display_email}
-    <br>
-    {l s='Email us: ' d='Shop.Theme.Global'}
-    {mailto address={$contact_infos.email} encode="javascript"}
     <hr/>
     <div class="block">
       <div class="icon"><i class="material-icons">&#xE158;</i></div>
       <div class="data email">
         {l s='Email us:' d='Modules.Contactinfo.Shop'}<br/>
+        {mailto address=$contact_infos.email encode="javascript"}
       </div>
-      {mailto address=$contact_infos.email encode="javascript"}
+    </div>
+  {/if}
+  {if $contact_infos.details}
+    <hr/>
+    <div class="block">
+      <div class="icon"><i class="material-icons">&#xE88E;</i></div>
+      <div class="data">
+        {l s='Details:' d='Modules.Contactinfo.Shop'}<br/>
+        {$contact_infos.details|nl2br nofilter}
+      </div>
     </div>
   {/if}
 </div>

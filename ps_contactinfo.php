@@ -101,6 +101,7 @@ class Ps_Contactinfo extends Module implements WidgetInterface
             'phone' => Configuration::get('PS_SHOP_PHONE'),
             'fax' => Configuration::get('PS_SHOP_FAX'),
             'email' => Configuration::get('PS_SHOP_EMAIL'),
+            'details' => Configuration::get('PS_SHOP_DETAILS'),
         ];
 
         return [
