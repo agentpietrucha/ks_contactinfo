@@ -59,6 +59,9 @@ class Ps_Contactinfo extends Module implements WidgetInterface
                 'displayNav', // Standard hook
                 'displayNav1', // For Classic-inspired themes
                 'displayFooter',
+                'displayContactRightColumn',
+                'displayContactLeftColumn',
+                'displayContactContent',
                 'actionAdminStoresControllerUpdate_optionsAfter',
             ]);
     }
@@ -71,7 +74,7 @@ class Ps_Contactinfo extends Module implements WidgetInterface
 
         if (preg_match('/^displayNav\d*$/', $hookName)) {
             $template_file = $this->templates['light'];
-        } elseif ($hookName == 'displayLeftColumn' || $hookName == 'displayRightColumn') {
+        } elseif ($hookName == 'displayContactLeftColumn' || $hookName == 'displayContactRightColumn' || $hookName == 'displayLeftColumn' || $hookName == 'displayRightColumn') {
             $template_file = $this->templates['rich'];
         } else {
             $template_file = $this->templates['default'];
