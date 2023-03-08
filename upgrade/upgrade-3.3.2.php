@@ -29,5 +29,5 @@ if (!defined('_PS_VERSION_')) {
 
 function upgrade_module_3_3_2($object)
 {
-    return $object->registerHook(['displayContactRightColumn', 'displayContactLeftColumn', 'displayContactContent']);
+    return $object->registerHook(['displayContactRightColumn', 'displayContactLeftColumn']);
 }
