@@ -29,18 +29,18 @@ if (!defined('_PS_VERSION_')) {
 
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 
-class Ps_Contactinfo extends Module implements WidgetInterface
+class Ks_Contactinfo extends Module implements WidgetInterface
 {
     private $templates = [
         'light' => 'nav.tpl',
-        'rich' => 'ps_contactinfo-rich.tpl',
-        'default' => 'ps_contactinfo.tpl',
+        'rich' => 'ks_contactinfo-rich.tpl',
+        'default' => 'ks_contactinfo.tpl',
     ];
 
     public function __construct()
     {
-        $this->name = 'ps_contactinfo';
-        $this->author = 'PrestaShop';
+        $this->name = 'ks_contactinfo';
+        $this->author = 'Karol Sawicki';
         $this->version = '3.3.2';
 
         $this->bootstrap = true;
@@ -87,6 +87,10 @@ class Ps_Contactinfo extends Module implements WidgetInterface
 
     public function getWidgetVariables($hookName = null, array $configuration = [])
     {
+        if ($hookName === 'displayFooter') {
+            return ['stores' => Store::getStores($this->context->language->id)];
+        }
+
         $address = $this->context->shop->getAddress();
 
         $is_state_multilang = !empty(State::$definition['multilang']);
