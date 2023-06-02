@@ -1,12 +1,11 @@
 {
-  "name": "prestashop/ps_contactinfo",
-  "description": "PrestaShop module ps_contactinfo",
-  "homepage": "https://github.com/PrestaShop/ps_contactinfo",
+  "name": "karol_sawicki/ks_contactinfo",
+  "description": "Karol Sawicki prestaShop module ps_contactinfo",
   "license": "AFL-3.0",
   "authors": [
     {
-      "name": "PrestaShop SA",
-      "email": "contact@prestashop.com"
+      "name": "Karol Sawicki",
+      "email": "agentpietrucha@gmail.com"
     }
   ],
   "require": {
